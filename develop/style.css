@@ -4,19 +4,25 @@ body {
   line-height: 1;
 }
 
-textarea{
+textarea, #textareaNine{
   position: absolute;
   top:5px;
   left:0px;
-  background:white;
+  background:transparent;
   border: none;
   resize: none;
   color: #000000;
+  font-size: 20px;
   text-align: left;
   width:100%;
   padding-left:5px;
-  
- 
+  color: black;
+  border: none;
+  overflow: auto;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
 
 .jumbotron {
@@ -25,6 +31,7 @@ textarea{
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
+  padding:20px;
 }
 
 .description{
@@ -40,7 +47,7 @@ textarea{
   
   white-space: pre-wrap;
   height: 80px;
-  border-top: 1px solid black;;
+  
 }
 
 .column {
@@ -57,16 +64,28 @@ textarea{
   
   width:10%;
 }
-#userInput {
+#userInput9, #userInput10, #userInput11, 
+#userInput12, #userInput1, #userInput2, 
+#userInput3, #userInput4, #userInput5 {
   position: relative;
-  
-  background:white;
+  background: #77dd77;
+  /* background:green; */
   color: #000000;
   border-top: 1px solid #000000;
   
   width:80%;
 }
-#hourOfDay{
+
+#saveTheDate {
+  position: relative;
+  border:none;
+  background: white;
+  color: #000000;
+  text-align: right;
+  width:10%;
+}
+
+#hourOfDay, #textareaNine{
   position:absolute;
   top:5px;
   right:5px;
@@ -87,15 +106,24 @@ textarea{
   color: white;
 }
 
-.saveBtn {
+.saveBtn, .saveBtn9 {
+  position:absolute;
+  top:0;
+  left:0;
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
+  height:100%;
   color: white;
+  overflow: auto;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
 
-.saveBtn i:hover {
+.saveBtn, .saveBtn9 i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
 }

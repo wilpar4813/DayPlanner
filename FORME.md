@@ -19,3 +19,14 @@ HW #5
 //    text field for user input for each hour
 //    save button for each field
 }
+
+if hour id is less than moment current 24hour time then grey
+
+if hour id is == momnet current hour time then red
+
+if hour id is > than current hour time then green
+
+
+Each row needs a:
+Set hour attribute to each row
+Each row need a userinput attribute
