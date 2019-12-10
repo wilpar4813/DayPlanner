@@ -3,33 +3,100 @@
 $(document).ready(function () {
     $("#currentDay").text(moment().format('dddd') + ", " + moment().format('LL'));
     console.log(moment().format('dddd') + ", " + moment().format('LL'));
+    //writeToSchedule();
+   //localStorage.clear();
 });
 
-$(".saveBtn9").on("click", function () {
+
+   
+
+
+
+$("#saveBtnNine").click(function () {
     console.log("user clicked to save 9am appointment");
-    var appointmentTimeSlot = document.getElementById('textareaNine');
+    var appointmentTimeSlot = "#textareaNine";
     var appointmentDetails = document.getElementById('textareaNine').value;
-    //bookAppointment(appointmentTimeSlot, appointmentDetails);
-    //console.log(nineAppointment);
+    bookAppointment(appointmentTimeSlot, appointmentDetails);
+    writeToSchedule();
 });
-/*
+
+$("#saveBtnTen").click(function () {
+    console.log("user clicked to save 10am appointment");
+    var appointmentTimeSlot =  "#textareaTen";
+    var appointmentDetails = document.getElementById('textareaTen').value;
+    bookAppointment(appointmentTimeSlot, appointmentDetails);
+    writeToSchedule();
+});
+$("#saveBtnEleven").click(function () {
+    console.log("user clicked to save 11am appointment");
+    var appointmentTimeSlot =  "#textareaEleven";
+    var appointmentDetails = document.getElementById('textareaEleven').value;
+    bookAppointment(appointmentTimeSlot, appointmentDetails);
+    writeToSchedule();
+});
+
+$("#saveBtnTwelve").click(function () {
+    console.log("user clicked to save 12pm appointment");
+    var appointmentTimeSlot =  "#textareaTwelve";
+    var appointmentDetails = document.getElementById('textareaTwelve').value;
+    bookAppointment(appointmentTimeSlot, appointmentDetails);
+    writeToSchedule();
+});
+$("#saveBtnOne").click(function () {
+    console.log("user clicked to save 1pm appointment");
+    var appointmentTimeSlot =  "#textareaOne";
+    var appointmentDetails = document.getElementById('textareaOne').value;
+    bookAppointment(appointmentTimeSlot, appointmentDetails);
+    writeToSchedule();
+});
+
+$("#saveBtnTwo").click(function () {
+    console.log("user clicked to save 2pm appointment");
+    var appointmentTimeSlot =  "#textareaTwo";
+    var appointmentDetails = document.getElementById('textareaTwo').value;
+    bookAppointment(appointmentTimeSlot, appointmentDetails);
+    writeToSchedule();
+});
+$("#saveBtnThree").click(function () {
+    console.log("user clicked to save 3pm appointment");
+    var appointmentTimeSlot =  "#textareaThree";
+    var appointmentDetails = document.getElementById('textareaThree').value;
+    bookAppointment(appointmentTimeSlot, appointmentDetails);
+    writeToSchedule();
+});
+
+$("#saveBtnFour").click(function () {
+    console.log("user clicked to save 4pm appointment");
+    var appointmentTimeSlot =  "#textareaFour";
+    var appointmentDetails = document.getElementById('textareaFour').value;
+    bookAppointment(appointmentTimeSlot, appointmentDetails);
+    writeToSchedule();
+});
+
+$("#saveBtnFive").click(function () {
+    console.log("user clicked to save 5pm appointment");
+    var appointmentTimeSlot =  "#textareaFive";
+    var appointmentDetails = document.getElementById('textareaFive').value;
+    bookAppointment(appointmentTimeSlot, appointmentDetails);
+    writeToSchedule();
+});
 //This function takes the new appointment and adds to schedule array.
-function bookAppointment(Time, Details) {
+function bookAppointment(time, details) {
 
     const newAppointment = {     // an appointment object
-        time: Time,        // Time of appointment
-        title: Details  // Details from appointmenmt text area
+        time: time,        // Time of appointment
+        title: details  // Details from appointmenmt text area
     }
     // console log new aapointment object
-    console.log(newAppointment);
+    //console.log(newAppointment);
 
     // Create array to store high scores
-    const scheduleArray = JSON.parse(localStorage.getItem("scheduleArray")) || [];
-    console.log(scheduleArray);
+    scheduleArray = JSON.parse(localStorage.getItem("scheduleArray")) || [];
+    //console.log(scheduleArray);
 
     //add new appointment to Schedule Array
     scheduleArray.push(newAppointment);
-    console.log(ScheduleArray);
+    //console.log(scheduleArray);
 
     //Update local storage with revised highScoresArray
     localStorage.setItem('scheduleArray', JSON.stringify(scheduleArray));
@@ -38,26 +105,24 @@ function bookAppointment(Time, Details) {
 
 
 
-
-
-
-function writeToSchedule(Time, Details) {
+function writeToSchedule() {
 
     // Use .map to sort out time and details from the Schedule Array
-    scheduleArray.map(newAppointment => {
-        if (newAppointment.Details != 0) {
-            console.log("The new appointment is at " + appointment.Details);
-            $(Time).append('<p>' + newAppointment.Details'</p>');
+    scheduleArray.map(newAppointment => {//need to check here for duplicates
+        if (newAppointment.title != 0) {
+            
+            $(newAppointment.time).html(newAppointment.title);
         }
+        console.log("The new appointment: " + newAppointment.title + " is at ... " + newAppointment.time);
     });
 }
 
 
-*/
 
 
 
 
+var scheduleArray = [];
 var time = moment();
 var format = 'hh:mma';
 var resetTime = moment('12:00am', format);
@@ -79,7 +144,7 @@ var fourBeginningTime = moment('4:00pm', format);
 var fourEndTime = moment('4:59pm', format);
 var fiveBeginningTime = moment('5:00pm', format);
 var fiveEndTime = moment('5:59pm', format);
-
+//writeToSchedule();
 //checkTime();
 //This function controls changing the colors of the rows as each hour passes.
 setInterval(function () {
@@ -94,7 +159,7 @@ function checkTime() {
 
     if (time.isBetween(nineBeginningTime, nineEndTime)) {
         //console.log('Tis is the 9am hour');
-        $('#userInpu t9').css('background', '#ff6961');
+        $('#userInput9').css('background', '#ff6961');
     }
     if (time.isAfter(nineEndTime)) {
         //console.log('Tis after the 9am hour');
@@ -198,6 +263,8 @@ function checkTime() {
     }
     if (time.isBetween(resetTime, nineBeginningTime)) {
         //console.log('The time is before work hours');
+        //localStorage.clear();
+        //writeToSchedule();
         $('#userInput9').css('background', ' #77dd77');
         $('#userInput10').css('background', ' #77dd77');
         $('#userInput11').css('background', ' #77dd77');

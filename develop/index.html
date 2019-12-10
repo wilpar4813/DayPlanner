@@ -22,8 +22,8 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script> -->
    
-    <script src="../lib/moment..min.js"></script>
-    <script src="script.js"></script>
+    <!-- <script src="../lib/moment..min.js"></script> -->
+    <!-- <script src="script.js"></script> -->
     
 
     <title>Work Day Scheduler</title>
@@ -40,13 +40,13 @@
         <!-- Timeblocks go here -->
         <div class="row" id="nineAM">
             <div class="column .col-lg-2" id="hour">
-                <div id="nineHour">9:00 AM</div>
+                <div id="hourOfDay">9:00 AM</div>
             </div>
             <div class="column .col-lg-8" id="userInput9">
                 <textarea rows="4" cols="50" id="textareaNine"></textarea>
             </div>
             <div class="column .col-lg-2" id="saveTheDate">
-                <button type="button" class="saveBtn9">Save The Date!</button>
+                <button type="button" class="saveBtn" id="saveBtnNine">Save The Date!</button>
             </div>
         </div>
         <div class="row" id="tenAM">
@@ -54,10 +54,10 @@
                 <div id="hourOfDay">10:00 AM</div>
             </div>
             <div class="column .col-lg-8" id="userInput10">
-                <textarea rows="4" cols="50"></textarea>
+                <textarea rows="4" cols="50" id="textareaTen"></textarea>
             </div>
             <div class="column .col-lg-2" id="saveTheDate">
-                <button type="button" class="saveBtn" onclick="console.log('Date saved!')">Save The Date!</button>
+                <button type="button" class="saveBtn" id="saveBtnTen">Save The Date!</button>
             </div>
         </div>
         <div class="row" id="elevenAM">
@@ -65,10 +65,10 @@
                 <div id="hourOfDay">11:00 AM</div>
             </div>
             <div class="column .col-lg-8" id="userInput11">
-                <textarea rows="4" cols="50"></textarea>
+                <textarea rows="4" cols="50" id="textareaEleven"></textarea>
             </div>
             <div class="column .col-lg-2" id="saveTheDate">
-                <button type="button" class="saveBtn" onclick="console.log('Date saved!')">Save The Date!</button>
+                <button type="button" class="saveBtn" id="saveBtnEleven">Save The Date!</button>
             </div>
         </div>
         <div class="row" id="twelvePM">
@@ -76,10 +76,10 @@
                 <div id="hourOfDay">12:00 PM</div>
         </div>
             <div class="column .col-lg-8" id="userInput12">
-                <textarea rows="4" cols="50"></textarea>
+                <textarea rows="4" cols="50" id="textareaTwelve"></textarea>
             </div>
             <div class="column .col-lg-2" id="saveTheDate">
-                <button type="button" class="saveBtn" onclick="console.log('Date saved!')">Save The Date!</button>
+                <button type="button" class="saveBtn" id="saveBtnTwelve">Save The Date!</button>
             </div>
         </div>
         <div class="row" id="onePM">
@@ -87,10 +87,10 @@
                 <div id="hourOfDay">1:00 PM</div>
             </div>
             <div class="column .col-lg-8" id="userInput1">
-                <textarea rows="4" cols="50"></textarea>
+                <textarea rows="4" cols="50" id="textareaOne"></textarea>
             </div>
             <div class="column .col-lg-2" id="saveTheDate">
-                <button type="button" class="saveBtn" onclick="console.log('Date saved!')">Save The Date!</button>
+                <button type="button" class="saveBtn"  id="saveBtnOne">Save The Date!</button>
             </div>
         </div>
         <div class="row" id="twoPM">
@@ -98,10 +98,10 @@
                 <div id="hourOfDay">2:00 PM</div>
             </div>
             <div class="column .col-lg-8" id="userInput2">
-                <textarea rows="4" cols="50"></textarea>
+                <textarea rows="4" cols="50" id="textareaTwo"></textarea>></textarea>
             </div>
             <div class="column .col-lg-2" id="saveTheDate">
-                <button type="button" class="saveBtn" onclick="console.log('Date saved!')">Save The Date!</button>
+                <button type="button" class="saveBtn" id="saveBtnTwo">Save The Date!</button>
             </div>
         </div>
         <div class="row" id="threePM">
@@ -109,10 +109,10 @@
                 <div id="hourOfDay">3:00 PM</div>
             </div>
             <div class="column .col-lg-8" id="userInput3">
-                <textarea rows="4" cols="50"></textarea>
+                <textarea rows="4" cols="50" id="textareaThree"></textarea>
             </div>
             <div class="column .col-lg-2" id="saveTheDate">
-                <button type="button" class="saveBtn" onclick="console.log('Date saved!')">Save The Date!</button>
+                <button type="button" class="saveBtn" id="saveBtnThree">Save The Date!</button>
             </div>
         </div>
         <div class="row" id="fourPM">
@@ -120,10 +120,10 @@
                 <div id="hourOfDay">4:00 PM</div>
             </div>
             <div class="column .col-lg-8" id="userInput4">
-                <textarea rows="4" cols="50"></textarea>
+                <textarea rows="4" cols="50" id="textareaFour"></textarea>
             </div>
             <div class="column .col-lg-2" id="saveTheDate">
-                <button type="button" class="saveBtn" onclick="console.log('Date saved!')">Save The Date!</button>
+                <button type="button" class="saveBtn" id="saveBtnFour">Save The Date!</button>
             </div>
         </div>
         <div class="row" id="fivePM">
@@ -131,15 +131,19 @@
                 <div id="hourOfDay">5:00 PM</div>
             </div>
             <div class="column .col-lg-8" id="userInput5">
-                <textarea rows="4" cols="50"></textarea>
+                <textarea rows="4" cols="50" id="textareaFive"></textarea>
             </div>
             <div class="column .col-lg-2" id="saveTheDate">
-                <button type="button" class="saveBtn" onclick="console.log('Date saved!')">Save The Date!</button>
+                <button type="button" class="saveBtn"  id="saveBtnFive">Save The Date!</button>
             </div>
         </div>
     </div>
     
     
-   
+    <script src="../lib/moment..min.js"></script>
+    <script src="script.js"></script>
+    <script> 
+        window.onload = writeToSchedule(); 
+    </script> 
   </body>
 </html>

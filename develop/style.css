@@ -85,7 +85,7 @@ textarea, #textareaNine{
   width:10%;
 }
 
-#hourOfDay, #textareaNine{
+#hourOfDay{
   position:absolute;
   top:5px;
   right:5px;
@@ -106,7 +106,7 @@ textarea, #textareaNine{
   color: white;
 }
 
-.saveBtn, .saveBtn9 {
+.saveBtn {
   position:absolute;
   top:0;
   left:0;
@@ -123,7 +123,7 @@ textarea, #textareaNine{
   box-shadow: none;
 }
 
-.saveBtn, .saveBtn9 i:hover {
+.saveBtn, i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
