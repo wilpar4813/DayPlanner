@@ -93,7 +93,11 @@ function bookAppointment(time, details) {
     //console.log(scheduleArray);
 
     //add new appointment to Schedule Array
-    scheduleArray.push(newAppointment);
+    scheduleArray.push(newAppointment);//need to check here for duplicates
+    //for(i=0, i,scheduleArray.length, i++){
+        //if(newAppointment.time)
+    //}
+    
     //console.log(scheduleArray);
 
     //Update local storage with revised highScoresArray
@@ -106,7 +110,7 @@ function bookAppointment(time, details) {
 function writeToSchedule() {
 
     // Use .map to sort out time and details from the Schedule Array
-    scheduleArray.map(newAppointment => {//need to check here for duplicates
+    scheduleArray.map(newAppointment => {
         console.log("Writing to schedule")
         if (newAppointment.title != 0) {
             
@@ -206,7 +210,6 @@ function checkTime() {
     }
     if (time.isBetween(oneBeginningTime, oneEndTime)) {
         //console.log('Tis is the 1pm hour');
-        writeToSchedule();
         $('#userInput1').css('background', '#ff6961');
     }
     if (time.isAfter(oneEndTime)) {
@@ -263,7 +266,7 @@ function checkTime() {
     }
     if (time.isBetween(resetTime, nineBeginningTime)) {
         //console.log('The time is before work hours');
-        //localStorage.clear();  THis need to be set to a timer
+        //localStorage.clear();  THis need to be set to a timer can't go in timer.
         //writeToSchedule();
         $('#userInput9').css('background', ' #77dd77');
         $('#userInput10').css('background', ' #77dd77');

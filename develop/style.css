@@ -114,7 +114,15 @@ textarea, #textareaNine{
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
+  background-image: url("../assets/Download-Floppy-Disk-Png-Image-68095-For-Designing-Projects.png")  ;
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  
+  background-position: center; 
   height:100%;
+  width:100%;
+  padding-left:35px;
+  padding-top:15px;
   color: white;
   overflow: auto;
   outline: none;
