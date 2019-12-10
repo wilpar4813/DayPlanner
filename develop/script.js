@@ -3,21 +3,19 @@
 $(document).ready(function () {
     $("#currentDay").text(moment().format('dddd') + ", " + moment().format('LL'));
     console.log(moment().format('dddd') + ", " + moment().format('LL'));
-    //writeToSchedule();
+    writeToSchedule(); //THis function call is not happening
    //localStorage.clear();
 });
 
 
    
 
-
-
 $("#saveBtnNine").click(function () {
     console.log("user clicked to save 9am appointment");
     var appointmentTimeSlot = "#textareaNine";
     var appointmentDetails = document.getElementById('textareaNine').value;
     bookAppointment(appointmentTimeSlot, appointmentDetails);
-    writeToSchedule();
+    writeToSchedule();// THis works pretty well
 });
 
 $("#saveBtnTen").click(function () {
@@ -109,6 +107,7 @@ function writeToSchedule() {
 
     // Use .map to sort out time and details from the Schedule Array
     scheduleArray.map(newAppointment => {//need to check here for duplicates
+        console.log("Writing to schedule")
         if (newAppointment.title != 0) {
             
             $(newAppointment.time).html(newAppointment.title);
@@ -207,6 +206,7 @@ function checkTime() {
     }
     if (time.isBetween(oneBeginningTime, oneEndTime)) {
         //console.log('Tis is the 1pm hour');
+        writeToSchedule();
         $('#userInput1').css('background', '#ff6961');
     }
     if (time.isAfter(oneEndTime)) {
@@ -263,7 +263,7 @@ function checkTime() {
     }
     if (time.isBetween(resetTime, nineBeginningTime)) {
         //console.log('The time is before work hours');
-        //localStorage.clear();
+        //localStorage.clear();  THis need to be set to a timer
         //writeToSchedule();
         $('#userInput9').css('background', ' #77dd77');
         $('#userInput10').css('background', ' #77dd77');
