@@ -1,87 +1,73 @@
-# Unit 05 Third-Party APIs Homework: Day Planner
+# DayPlanner
+Homework #5
 
-Create a simple calendar application that allows the user to save events for each hour of the day. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
 
-The app should display standard business hours (9 a.m. to 5 p.m.). Each time slot should represent one hour and contain the following:
+***DayPlanner***
 
-* The time
+- READ ME 
+- Homework 5 
+- DayPlanner
+- Version: 1.0.0 
+- Web Design By Tripp Parham 
+- Published: Thursday December 12th 2019
 
-* A field to hold user input
+***Configuration instructions***
 
-* A save button
+-Goto the following link:
 
-Clicking on the save button will store the time and user input in `localStorage`.
+https://wilpar4813.github.io/DayPlanner/
 
-Near the top of the calendar, the application should display the current day. Additionally, each hour should be color coded to reflect whether the time slot is in the past, the present, or the future. This will change depending on the time of day.
 
-You'll need to use the [Moment.js](https://momentjs.com/) library to work with date and time. Be sure to read the documentation carefully and concentrate on using Moment.js in the browser.
+***Installation instructions***
 
-![day planner demo](./Assets/05-Third-Party-APIs-homework-demo.gif)
+- No installation necessary. Any main stream browser can be used.
 
-## User Story
+***Operating instructions***
 
-AS AN employee with a busy schedule
+- On the home screen the date is displayed at the top of the page.
+- From the home screen you can click in the text field of the hour you would like to schedule an appointment to enter appointment details.
+- Click the button with floppy disk icon to store the appointment to local storage so it can persist after browser refresh.  This button must be clicked for each hour that details are changed in.
+- As the day progresses the rows for past hours will turn gray, as the current hour is red, and the futures hours are green.
 
-I WANT to add important events to a daily planner
+***List of files included in the following structure***
 
-SO THAT I can manage my time effectively 
+- README.md (Read for information on site development) 
+- FORME.md  (Development use only)
+- index.html  
+- assets folder
+    - 05-Third-Party-APIs-homework-demo.gif
+    - Download-Floppy-Disk-Png-Image-68095-For-Designing-Projects.png
+- develop folder
+    - style.css
+    - script.js
+- lib folder
+  - moment..min.js
 
-## Business Context
 
-Poor time management can result in missed meetings and deadlines or create the appearance of unprofessionalism. A daily planner allows employees to see their day at a glance, schedule time effectively, and improve productivity. 
+***Copyright and licensing information***
 
-## Minimum Requirements
 
-* Functional, deployed application.
 
-* GitHub repository with a unique name and a README describing project.
+***Contact information for the distributor or programmer***
 
-* The application displays timeblocks for standard business hours (9 a.m. to 5 p.m.).
+Site Developer: Tripp Parham Email: tripp.parham@me.com 
 
-* Each timeblock contains an input field and save button.
+***Known bugs[0]***
 
-* Clicking a timeblock's "Save" button stores the input text in local storage, allowing the text to persist when the application is refreshed.
 
-* The current day is displayed at the top of the calendar.
 
-* Each timeblock is color coded to indicate whether it is in a past, present, or future hour.
+***Troubleshooting[3]***
+- The correct time displays at the top of the page.
+- Textfields for each hour store and reload correctly from local storage after browser refresh.
+- Rows correctly change colors as the day progresses.  Screen usually has to be refreshed for rows to update, but the are set to update every second.
 
-```
-GIVEN that an employee adds events to a specific hour in a calendar
 
-WHEN the employee clicks the save button
+***Credits and acknowledgments***
 
-THEN events are saved in the timeblock for that hour
-```
-- - -
+Special thanks to the Instructors and Staff at the UNC Coding Bootcamp. They are an awesome team.:-) Also I couldn't have completed this project without my tutor, Karen Largent. Thanks to my Mom in heaven that paid for my Bootcamp. Also special thanks to my wife, who hasn't seen me much recently, for her kind patience in dealing with my coding frustrations.
 
-## Commit Early and Often
+***Change Log***
 
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for two reasons:
+***Site Updates***
 
-* Your commit history is a signal to employers that you are actively working on projects and learning new skills.
-
-* Your commit history allows you to revert your codebase in the event that you need to return to a previous state.
-
-Follow these guidelines for committing:
-
-* Make single-purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits.
-
-* Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history.
-
-* Don't commit half-done work, for the sake of your collaborators (and your future self!).
-
-* Test your application before you commit to ensure functionality at every step in the development process.
-
-We would like you to have well over 200 commits by graduation, so commit early and often!
-
-## Submission on BCS
-
-You are required to submit the following:
-
-* The URL of the deployed application
-
-* The URL of the GitHub repository
-
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+-Verion 1.0.0 Released THursday December 12th 2019
