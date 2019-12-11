@@ -1,17 +1,13 @@
 // displays in format Wednesday, December 4th, 2019
 $(document).ready(function () {
     $("#currentDay").text(moment().format('dddd') + ", " + moment().format('LL'));
-    console.log(moment().format('dddd') + ", " + moment().format('LL'));
+    //console.log(moment().format('dddd') + ", " + moment().format('LL'));
     writeToSchedule();
-    // THis function call is not happening
-    //localStorage.clear();
-
-
 });
 
-
+// Save buttons for each hour.  The origin textarea id is passed with the appointment details
 $("#saveBtnNine").click(function () {
-    console.log("user clicked to save 9am appointment");
+    //console.log("user clicked to save 9am appointment");
     var appointmentTimeSlot = "#textareaNine";
     var appointmentDetails = document.getElementById('textareaNine').value;
     bookAppointment(appointmentTimeSlot, appointmentDetails);
@@ -19,14 +15,15 @@ $("#saveBtnNine").click(function () {
 });
 
 $("#saveBtnTen").click(function () {
-    console.log("user clicked to save 10am appointment");
+    //console.log("user clicked to save 10am appointment");
     var appointmentTimeSlot = "#textareaTen";
     var appointmentDetails = document.getElementById('textareaTen').value;
     bookAppointment(appointmentTimeSlot, appointmentDetails);
     writeToSchedule();
 });
+
 $("#saveBtnEleven").click(function () {
-    console.log("user clicked to save 11am appointment");
+    //console.log("user clicked to save 11am appointment");
     var appointmentTimeSlot = "#textareaEleven";
     var appointmentDetails = document.getElementById('textareaEleven').value;
     bookAppointment(appointmentTimeSlot, appointmentDetails);
@@ -34,14 +31,15 @@ $("#saveBtnEleven").click(function () {
 });
 
 $("#saveBtnTwelve").click(function () {
-    console.log("user clicked to save 12pm appointment");
+    //console.log("user clicked to save 12pm appointment");
     var appointmentTimeSlot = "#textareaTwelve";
     var appointmentDetails = document.getElementById('textareaTwelve').value;
     bookAppointment(appointmentTimeSlot, appointmentDetails);
     writeToSchedule();
 });
+
 $("#saveBtnOne").click(function () {
-    console.log("user clicked to save 1pm appointment");
+    //console.log("user clicked to save 1pm appointment");
     var appointmentTimeSlot = "#textareaOne";
     var appointmentDetails = document.getElementById('textareaOne').value;
     bookAppointment(appointmentTimeSlot, appointmentDetails);
@@ -49,14 +47,15 @@ $("#saveBtnOne").click(function () {
 });
 
 $("#saveBtnTwo").click(function () {
-    console.log("user clicked to save 2pm appointment");
+    //console.log("user clicked to save 2pm appointment");
     var appointmentTimeSlot = "#textareaTwo";
     var appointmentDetails = document.getElementById('textareaTwo').value;
     bookAppointment(appointmentTimeSlot, appointmentDetails);
     writeToSchedule();
 });
+
 $("#saveBtnThree").click(function () {
-    console.log("user clicked to save 3pm appointment");
+    //console.log("user clicked to save 3pm appointment");
     var appointmentTimeSlot = "#textareaThree";
     var appointmentDetails = document.getElementById('textareaThree').value;
     bookAppointment(appointmentTimeSlot, appointmentDetails);
@@ -64,7 +63,7 @@ $("#saveBtnThree").click(function () {
 });
 
 $("#saveBtnFour").click(function () {
-    console.log("user clicked to save 4pm appointment");
+    //console.log("user clicked to save 4pm appointment");
     var appointmentTimeSlot = "#textareaFour";
     var appointmentDetails = document.getElementById('textareaFour').value;
     bookAppointment(appointmentTimeSlot, appointmentDetails);
@@ -72,12 +71,13 @@ $("#saveBtnFour").click(function () {
 });
 
 $("#saveBtnFive").click(function () {
-    console.log("user clicked to save 5pm appointment");
+    //console.log("user clicked to save 5pm appointment");
     var appointmentTimeSlot = "#textareaFive";
     var appointmentDetails = document.getElementById('textareaFive').value;
     bookAppointment(appointmentTimeSlot, appointmentDetails);
     writeToSchedule();
 });
+
 // This function takes the new appointment and adds to schedule array.
 function bookAppointment(time, details) {
 
@@ -86,40 +86,38 @@ function bookAppointment(time, details) {
         title: details // Details from appointmenmt text area
     }
   
-
     // Create array to store high scores
     scheduleArray = JSON.parse(localStorage.getItem("scheduleArray")) || [];
-    console.log(scheduleArray);
+    //console.log(scheduleArray);
 
-   /* var index = newAppointment.indexOf(newAppointment.time);*/
-   scheduleArray = scheduleArray.filter(appointment => appointment.time !== newAppointment.time);
-   console.log(scheduleArray);
+    // Remove any appointments previosly scheduled at the same time as new appointment.
+    scheduleArray = scheduleArray.filter(appointment => appointment.time !== newAppointment.time);
+    //console.log(scheduleArray);
+
     // add new appointment to Schedule Array
     scheduleArray.push(newAppointment);
   
 
     // Update local storage with revised highScoresArray
     localStorage.setItem('scheduleArray', JSON.stringify(scheduleArray));
-    console.log(scheduleArray);
+    //console.log(scheduleArray);
 }
 
-
+// Write the schedule array to html
 function writeToSchedule() {
     scheduleArray = JSON.parse(localStorage.getItem("scheduleArray")) || [];
     // Use .map to sort out time and details from the Schedule Array
     scheduleArray.map(newAppointment => {
-        console.log("Writing to schedule")
+        //console.log("Writing to schedule")
         if (newAppointment.title != 0) {
 
             $(newAppointment.time).html(newAppointment.title);
         }
-        console.log("The new appointment: " + newAppointment.title + " is at ... " + newAppointment.time);
+        //console.log("The new appointment: " + newAppointment.title + " is at ... " + newAppointment.time);
     });
 }
 
-
 // Time moments for changing colors of rows
-
 var scheduleArray = [];
 var time = moment();
 var format = 'hh:mma';
@@ -143,17 +141,17 @@ var fourEndTime = moment('4:59pm', format);
 var fiveBeginningTime = moment('5:00pm', format);
 var fiveEndTime = moment('5:59pm', format);
 
-// This function controls changing the colors of the rows as each hour passes.
+// This function controls changing the colors of the rows as each hour passes.  It is set to update every second.
 setInterval(function () {
     checkTime();
 }, 1000);
 
 function checkTime() {
+    
     if (time.isBefore(nineBeginningTime)) {
         // console.log('Tis before 1pm hour');
         $('#userInput9 ').css('background', '#77dd77');
     }
-
     if (time.isBetween(nineBeginningTime, nineEndTime)) {
         // console.log('Tis is the 9am hour');
         $('#userInput9').css('background', '#ff6961');
@@ -259,9 +257,7 @@ function checkTime() {
         $('#userInput5').css('background', '#d3d3d3');
     }
     if (time.isBetween(resetTime, nineBeginningTime)) {
-        // console.log('The time is before work hours');
-        // localStorage.clear();  THis need to be set to a timer can't go in timer.
-        // writeToSchedule();
+        // console.log('The time is before work hours'); 
         $('#userInput9').css('background', '#77dd77');
         $('#userInput10').css('background', '#77dd77');
         $('#userInput11').css('background', '#77dd77');
